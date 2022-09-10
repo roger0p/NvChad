@@ -10,9 +10,9 @@ return {
     end,
   },
 
-  -- ["nvim-telescope/telescope.nvim"] = {
-  --   override_options = overrides.telescope
-  -- },
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope
+  },
   --
   -- overrde plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {
