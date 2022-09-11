@@ -11,7 +11,7 @@ return {
   },
 
   ["nvim-telescope/telescope.nvim"] = {
-    override_options = overrides.telescope
+    override_options = overrides.telescope,
   },
   --
   -- overrde plugin configs
@@ -23,19 +23,6 @@ return {
     override_options = overrides.mason,
   },
 
-  -- ["norcalli/nvim-colorizer.lua"] = {
-  --   config = function()
-  --     require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-  --       RGB = true, -- #RGB hex codes
-  --       RRGGBB = true, -- #RRGGBB hex codes
-  --       RRGGBBAA = true, -- #RRGGBBAA hex codes
-  --       rgb_fn = true, -- CSS rgb() and rgba() functions
-  --       hsl_fn = true, -- CSS hsl() and hsla() functions
-  --       css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-  --       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-  --     })
-  --   end,
-  -- },
   ["kyazdani42/nvim-tree.lua"] = {
     -- disable = true,
     override_options = overrides.nvimtree,
@@ -58,6 +45,9 @@ return {
   ["goolord/alpha-nvim"] = {
     disable = false,
     cmd = "Alpha",
+    config = function()
+      require "plugins.configs.alpha"
+    end,
   },
 
   -- load it after nvim-lspconfig cuz we lazy loaded lspconfig

@@ -44,16 +44,10 @@ M.nvimtree = {
 M.telescope = {
   extensions_list = {
     "file_browser",
+    "themes",
+    "term"
   },
-  -- default = {
-    -- mappings = {
-    --   n = {
-    --       ["N"] = require("telescope.extensions.file_browser.actions").create,
-    --       -- ["N"] = require "telescope".extensions.file_browser.actions.create,
-    --       -- ["h"] = require "telescope".extensions.file_browser.actions.goto_parent_dir,
-    --   },
-  --   }
-  -- },
+  
   extensions = {
     file_browser = {
       theme = "dropdown",
@@ -65,9 +59,6 @@ M.telescope = {
           ["<C-w>"] = function() vim.cmd('normal vbd') end,
         },
         ["n"] = {
-          -- your custom normal mode mappings
-          -- ["N"] = require("telescope.extensions.file_browser.actions").create,
-          -- ["h"] = fb_actions.goto_parent_dir,
           ["/"] = function()
             vim.cmd('startinsert')
           end
