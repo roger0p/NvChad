@@ -2,6 +2,19 @@ local overrides = require "custom.plugins.overrides"
 -- custom/plugins/init.lua
 return {
 
+  --NvChad Ui Changes
+  ["NvChad/ui"] = {
+    override_options = {
+      statusline = {
+        separator_style = "default",
+        -- separator_style = {
+        --   left = " ",
+        --   right = "",
+        -- },
+      },
+    },
+  },
+
   -- Override plugin definition options
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -10,9 +23,9 @@ return {
     end,
   },
 
-  ["nvim-telescope/telescope.nvim"] = {
-    override_options = overrides.telescope,
-  },
+  -- ["nvim-telescope/telescope.nvim"] = {
+  --   override_options = overrides.telescope,
+  -- },
   --
   -- overrde plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {

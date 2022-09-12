@@ -1,19 +1,23 @@
 local M = {}
 
+local opts = "opts = { silent = true, noremap = true }"
 M.general = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
   },
 
   n = {
-    ["<leader>A"] = { "ggVG<CR>", opts = { silent = true } },
-    ["<C-q>"] = { ":q<CR>", opts = { silent = true } },
-    ["<C-n>"] = { ":NvimTreeToggle<CR>", opts = { silent = true } },
-    ["<leader>e"] = { ":Telescope file_browser<CR>", opts = { silent = true } },
-    ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts = { silent = true } },
-    ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts = { silent = true } },
-    ["<leader>zf"] = { ":TZFocus<CR>", opts = { silent = true } },
-    ["<leader>m"] = { ":TZMinimalist<CR>", opts = { silent = true } },
+    ["<leader>A"] = { "ggVG<CR>", "Select All", opts },
+    ["<C-q>"] = { ":q<CR>", opts },
+    ["<C-n>"] = { ":NvimTreeToggle<CR>", opts },
+    ["<leader>e"] = { ":Telescope file_browser<CR>", "File Browser", opts },
+    ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts },
+    ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts },
+    ["<leader>jf"] = { "<cmd>HopChar1<CR>", "1 Character Search", opts },
+    ["<leader>jt"] = { "<cmd>HopChar2<CR>", "2 Character Search", opts },
+    ["<leader>zf"] = { ":TZFocus<CR>", "Focus Mode", opts },
+    ["<leader>m"] = { ":TZMinimalist<CR>", "Zen Mode", opts },
+    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
     -----------------------------------------------------------------
     -- SUPERCOOL MAPPING THAT SWAPS TRUE WITH FALSE AND VICE-VERSA --
     -----------------------------------------------------------------
@@ -26,6 +30,7 @@ M.general = {
         end
         swapBoolean()
       end,
+      "Replace true/false",
     },
   },
 

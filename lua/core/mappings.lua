@@ -6,7 +6,7 @@ end
 
 local M = {}
 
-M.general = {
+M.custom = {
   i = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "beginning of line" },
@@ -402,6 +402,12 @@ M.blankline = {
       "Jump to current_context",
     },
   },
+}
+M.disabled = {
+  n = {
+      ["j"] = "",
+      ["k"] = ""
+  }
 }
 
 return M
