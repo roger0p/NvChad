@@ -6,7 +6,7 @@ return {
   ["NvChad/ui"] = {
     override_options = {
       statusline = {
-        separator_style = "default",
+        separator_style = "round", --default/round/block/arrow
         -- separator_style = {
         --   left = " ",
         --   right = "",
@@ -23,9 +23,9 @@ return {
     end,
   },
 
-  -- ["nvim-telescope/telescope.nvim"] = {
-  --   override_options = overrides.telescope,
-  -- },
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
   --
   -- overrde plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {

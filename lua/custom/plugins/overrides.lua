@@ -45,9 +45,9 @@ M.telescope = {
   extensions_list = {
     "file_browser",
     "themes",
-    "term"
+    "term",
   },
-  
+
   extensions = {
     file_browser = {
       theme = "dropdown",
@@ -56,12 +56,14 @@ M.telescope = {
       mappings = {
         -- your custom insert mode mappings
         ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+          ["<C-w>"] = function()
+            vim.cmd "normal vbd"
+          end,
         },
         ["n"] = {
           ["/"] = function()
-            vim.cmd('startinsert')
-          end
+            vim.cmd "startinsert"
+          end,
         },
       },
     },

@@ -6,3 +6,4 @@
 require "custom.base.options"
 ------ Add autocmds here -------
 require "custom.base.autocmd"
+-- vim.cmd[[colo catppuccin]]

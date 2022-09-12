@@ -1,15 +1,21 @@
 local M = {}
 
 local opts = "opts = { silent = true, noremap = true }"
-M.general = {
+M.custom = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
   },
 
   n = {
     ["<leader>A"] = { "ggVG<CR>", "Select All", opts },
-    ["<C-q>"] = { ":q<CR>", opts },
+    ["<C-q>"] = {
+      function()
+        vim.diagnostic.setloclist()
+      end,
+      "diagnostic setloclist",
+    },
     ["<C-n>"] = { ":NvimTreeToggle<CR>", opts },
+    ["<leader>q"] = { ":q<CR>","Quit Neovim", opts },
     ["<leader>e"] = { ":Telescope file_browser<CR>", "File Browser", opts },
     ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts },
     ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts },
