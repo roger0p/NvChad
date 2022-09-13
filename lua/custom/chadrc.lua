@@ -3,8 +3,10 @@
 local M = {}
 
 M.ui = {
-  theme = "tokyodark", -- default theme
+  theme_toggle = {"catppuccin", "tokyodark"},
+  theme = "catppuccin", -- default theme
   transparency = false,
+  hl_override = require("custom.highlights")
 }
 
 M.plugins = require "custom.plugins"

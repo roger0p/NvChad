@@ -27,4 +27,20 @@ g.tokyodark_transparent_background = true
 g.tokyodark_enable_italic_comment = true
 g.tokyodark_enable_italic = false
 g.tokyodark_color_gamma = "1.0"
-require("lualine").setup()
+
+-----------------------
+-- WSL RELATED STUFF --
+-----------------------
+if vim.fn.has "wsl" == 1 then
+  vim.cmd "set guifont='Iosevka'"
+  vim.g.clipboard = {
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+  }
+end

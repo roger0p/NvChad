@@ -1,33 +1,33 @@
-
 -----------------------------
 -- A U T O C O M M A N D S --
 -----------------------------
 
-
--- ~ Set Colorscheme if you don't like any of the NvChad themes ~ --
-vim.api.nvim_create_autocmd("BufEnter", {command = "source ~/.config/nvim/lua/custom/init.lua"})
-vim.api.nvim_create_autocmd("BufEnter", {command = "source ~/.config/nvim/lua/custom/plugins/lualine.lua"})
-
+local CursorLine = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 ---------------------------------------------------------------------
 -- TO HIGHLIGHT CURSORLINE WHICH IDK WHY NVCHAD DOESN'T BY DEFAULT --
 ---------------------------------------------------------------------
-local CursorLine = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   command = "hi CursorLine guibg=#24242d",
 --   group = CursorLine,
 -- })
 -- vim.api.nvim_create_autocmd("InsertEnter", {
-  -- command = "normal zz",
-  -- command = "hi CursorLine guibg=#353641",
-  -- group = CursorLine,
+-- command = "normal zz",
+-- command = "hi CursorLine guibg=#353641",
+-- group = CursorLine,
 -- })
 
+-- ~ Set Colorscheme if you don't like any of the NvChad themes ~ --
+-- vim.api.nvim_create_autocmd("BufEnter", { command = "source ~/.config/nvim/lua/custom/init.lua", group = CursorLine })
+-- vim.api.nvim_create_autocmd(
+--   "BufEnter",
+--   { command = "source ~/.config/nvim/lua/custom/plugins/lualine.lua", group = CursorLine }
+-- )
 
 ----------------------------------------------------
 -- TO CHANGE CURSORLINE COLOR WHEN IN INSERT MODE --
 ----------------------------------------------------
 vim.api.nvim_create_autocmd("InsertEnter", {
-  command = "hi CursorLine guibg=#161722",
+  command = "hi CursorLine guibg=#22262a",
   group = CursorLine,
 })
 vim.api.nvim_create_autocmd("InsertLeave", {
@@ -82,7 +82,6 @@ vim.cmd [[
 --     end
 --   end,
 -- })
-
 
 --------------------------------
 -- SOME SMALL SIMPLE AUTOCMDS --

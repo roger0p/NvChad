@@ -23,6 +23,15 @@ return {
     end,
   },
 
+  -- Override plugin definition options
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    cmd = "Alpha",
+    config = function()
+      require "plugins.configs.alpha"
+    end,
+  },
+
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
@@ -54,20 +63,18 @@ return {
     disable = false,
   },
 
-  -- Override plugin definition options
-  ["goolord/alpha-nvim"] = {
-    disable = false,
-    cmd = "Alpha",
-    config = function()
-      require "plugins.configs.alpha"
-    end,
-  },
-
   -- load it after nvim-lspconfig cuz we lazy loaded lspconfig
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
       require "custom.plugins.null-ls"
+    end,
+  },
+
+  ["akinsho/toggleterm.nvim"] = {
+    tag = "*",
+    config = function()
+      require("custom.plugins.toggleterm")
     end,
   },
 
@@ -83,6 +90,30 @@ return {
   ["sainnhe/gruvbox-material"] = {},
   ["sainnhe/everforest"] = {},
   ["folke/trouble.nvim"] = { cmd = "TroubleToggle" },
+  ["nvim-treesitter/playground"] = {
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        playground = {
+          enable = true,
+          disable = {},
+          updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+          persist_queries = false, -- Whether the query persists across vim sessions
+          keybindings = {
+            toggle_query_editor = "o",
+            toggle_hl_groups = "i",
+            toggle_injected_languages = "t",
+            toggle_anonymous_nodes = "a",
+            toggle_language_display = "I",
+            focus_language = "f",
+            unfocus_language = "F",
+            update = "R",
+            goto_node = "<cr>",
+            show_help = "?",
+          },
+        },
+      }
+    end,
+  },
   ["windwp/nvim-ts-autotag"] = {
     config = function()
       require("nvim-ts-autotag").setup()
