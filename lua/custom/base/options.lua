@@ -7,6 +7,7 @@ local g = vim.g
 
 o.swapfile = false
 o.scrolloff = 8
+o.sidescrolloff = 20
 o.wrap = false
 o.cmdheight = 1
 -- o.laststatus = 1
