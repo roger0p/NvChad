@@ -27,7 +27,7 @@ local CursorLine = vim.api.nvim_create_augroup("CursorLine", { clear = true })
 -- TO CHANGE CURSORLINE COLOR WHEN IN INSERT MODE --
 ----------------------------------------------------
 vim.api.nvim_create_autocmd("InsertEnter", {
-  command = "hi CursorLine guibg=#22262a",
+  command = "hi CursorLine guibg=#2f2e3e",
   group = CursorLine,
 })
 vim.api.nvim_create_autocmd("InsertLeave", {
