@@ -31,7 +31,11 @@ M.custom = {
     --Toggleterm Mappings
     ["<leader>gg"] = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Open Lazigit", opts = { noremap = true, silent = true } },
     ["<leader>gn"] = { "<cmd>lua _NODE_TOGGLE()<CR>", "Open Node", opts = { noremap = true, silent = true } },
-    ["<leader>gd"] = { "<cmd>lua _NCDU_TOGGLE()<CR>", "Open storage analyzer", opts = { noremap = true, silent = true } },
+    ["<leader>gd"] = {
+      "<cmd>lua _NCDU_TOGGLE()<CR>",
+      "Open storage analyzer",
+      opts = { noremap = true, silent = true },
+    },
     ["<leader>gb"] = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Open Task Manager", opts = { noremap = true, silent = true } },
     ["<leader>gs"] = { "<cmd>lua _SPOTIFY_TOGGLE()<CR>", "Open Spotify", opts = { noremap = true, silent = true } },
     ["<leader>gp"] = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "Open Python3", opts = { noremap = true, silent = true } },
@@ -59,11 +63,12 @@ M.disabled = {
 
   t = {
     -- toggle in terminal mode
-    ["<A-h>"] = " ",
+    ["<A-h>"] = "",
   },
 
   n = {
-    ["<A-h>"] = " ",
+    ["<A-h>"] = "",
+    ["<leader>pt"] = "",
   },
 }
 return M

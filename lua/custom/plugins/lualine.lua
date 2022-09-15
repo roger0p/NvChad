@@ -4,25 +4,32 @@
 
 -- stylua: ignore
 local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#303030',
+  bg="#232232",
+  fg="#cdd6f4",
+  none="",
+  cyan="#89dceb",
+  black="#181825",
+  gray="#45475a",
+  magenta="#cba6f7",
+  pink="#f5c2e7",
+  red="#f38ba8",
+  green="#a6e3a1",
+  yellow="#f9e2af",
+  blue="#89b4fa",
+  orange="#fab387",
+  black4="#585b70",
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.bg, bg = colors.blue },
+    b = { fg = colors.fg, bg = colors.gray },
+    c = { fg = colors.fg, bg = colors.none },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert = { a = { fg = colors.black, bg = colors.red } },
+  visual = { a = { fg = colors.black, bg = colors.green } },
+  replace = { a = { fg = colors.black, bg = colors.orange } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },
@@ -31,31 +38,31 @@ local bubbles_theme = {
   },
 }
 
-require('lualine').setup {
+require("lualine").setup {
   options = {
-    theme = "auto",
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
+    theme = bubbles_theme,
+    component_separators = " ",
+    section_separators = { left = "", right = "" },
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { "mode", separator = { right = "" } },
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_b = { "filename" },
+    lualine_c = { "branch", "diff" },
+    lualine_x = { "filetype" },
+    lualine_y = { "progress" },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { "location", separator = { right = "" }, left_padding = 2 },
     },
   },
   inactive_sections = {
-    lualine_a = { 'filename' },
+    lualine_a = { "filename" },
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = { "location" },
   },
   tabline = {},
   extensions = {},

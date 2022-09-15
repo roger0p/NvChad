@@ -3,6 +3,9 @@ local overrides = require "custom.plugins.overrides"
 return {
 
   --NvChad Ui Changes
+  ["NvChad/base46"] = {
+    -- disable = true,
+  },
   ["NvChad/ui"] = {
     override_options = {
       statusline = {
@@ -13,6 +16,12 @@ return {
         -- },
       },
     },
+  },
+
+  ["nvim-lualine/lualine.nvim"] = {
+    config = function ()
+      -- require "custom.plugins.lualine"
+    end
   },
 
   -- Override plugin definition options
@@ -74,7 +83,7 @@ return {
   ["akinsho/toggleterm.nvim"] = {
     tag = "*",
     config = function()
-      require("custom.plugins.toggleterm")
+      require "custom.plugins.toggleterm"
     end,
   },
 

@@ -6,3 +6,6 @@
 require "custom.base.options"
 ------ Add autocmds here -------
 require "custom.base.autocmd"
+
+-- SET YOUR COLORSCHEME HERE IF YOU DON'T LIKE ANY OF THE NVCHAD THEMES
+-- require "custom.colors"
