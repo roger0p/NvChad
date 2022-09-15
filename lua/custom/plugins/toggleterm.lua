@@ -19,7 +19,7 @@ toggleterm.setup {
   float_opts = {
     border = "curved",
     winblend = 0,
-    width = 139,
+    width = 120,
     height = 24,
     highlights = {
       border = "Normal",
