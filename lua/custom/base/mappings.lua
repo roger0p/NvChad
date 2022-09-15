@@ -3,6 +3,18 @@ local M = {}
 M.custom = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+    ["<C-o>"] = {
+      function()
+        require("luasnip").expand_or_jump()
+      end,
+      opts = { silent = true, noremap = true },
+    },
+    ["<C-Space>"] = {
+      function()
+        require("cmp").mapping.complete()
+      end,
+      opts = { silent = true, noremap = true },
+    },
   },
 
   n = {
@@ -60,6 +72,8 @@ M.custom = {
 }
 
 M.disabled = {
+
+  i = {},
 
   t = {
     -- toggle in terminal mode
