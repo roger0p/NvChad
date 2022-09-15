@@ -8,4 +8,4 @@ require "custom.base.options"
 require "custom.base.autocmd"
 
 -- SET YOUR COLORSCHEME HERE IF YOU DON'T LIKE ANY OF THE NVCHAD THEMES
--- require "custom.colors"
+-- require "custom.base.colors"

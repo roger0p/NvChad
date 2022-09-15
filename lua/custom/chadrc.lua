@@ -6,7 +6,7 @@ M.ui = {
   theme_toggle = { "catppuccin", "tokyodark" },
   theme = "catppuccin", -- default theme
   transparency = false,
-  hl_override = require "custom.highlights",
+  hl_override = require "custom.base.highlights",
   -- changed_themes = {
   --   catppuccin = {
   --     base_16 = {
@@ -26,6 +26,6 @@ M.ui = {
 
 M.plugins = require "custom.plugins"
 
-M.mappings = require "custom.mappings"
+M.mappings = require "custom.base.mappings"
 
 return M
