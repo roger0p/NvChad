@@ -3,7 +3,7 @@
 local M = {}
 
 M.ui = {
-  theme_toggle = { "catppuccin", "tokyodark" },
+  theme_toggle = { "catppuccin", "gruvchad" },
   theme = "catppuccin", -- default theme
   transparency = false,
   hl_override = require "custom.base.highlights",
