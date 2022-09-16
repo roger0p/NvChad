@@ -45,11 +45,6 @@ M.custom = {
     ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts = { silent = true, noremap = true } },
     ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts = { silent = true, noremap = true } },
     ["<leader>q"] = { ":q<CR>", "Quit Neovim", opts = { silent = true, noremap = true } },
-    ["<leader>s"] = {
-      ":source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>",
-      "Source Luasnip config",
-      opts = { noremap = true },
-    },
     ["<leader>e"] = { ":Telescope file_browser<CR>", "File Browser", opts = { silent = true, noremap = true } },
     ["<leader><leader>"] = { ":Telescope find_files<CR>", "Find Files", opts = { silent = true, noremap = true } },
     ["<leader>jf"] = { "<cmd>HopChar1<CR>", "1 Character Search", opts = { silent = true, noremap = true } },
@@ -98,6 +93,10 @@ M.disabled = {
   t = {
     -- toggle in terminal mode
     ["<A-h>"] = "",
+    ["o"] = "",
+    ["O"] = "",
+    -- ["-"] = "",
+    -- ["+"] = "",
   },
 
   n = {
