@@ -5,13 +5,28 @@ M.custom = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
     ["<C-o>"] = {
       function()
-        require("luasnip").expand_or_jump()
+        local ls = require "luasnip"
+        if ls.expand_or_jumpable() then
+          ls.expand_or_jump()
+        end
       end,
       opts = { silent = true, noremap = true },
     },
-    ["<C-Space>"] = {
+    ["<S-Tab>"] = {
       function()
-        require("cmp").mapping.complete()
+        require("luasnip").jump(-1)
+      end,
+      opts = { silent = true, noremap = true },
+    },
+  },
+
+  s = {
+    ["<C-o>"] = {
+      function()
+        local ls = require "luasnip"
+        if ls.expand_or_jumpable() then
+          ls.expand_or_jump()
+        end
       end,
       opts = { silent = true, noremap = true },
     },
@@ -30,6 +45,11 @@ M.custom = {
     ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts = { silent = true, noremap = true } },
     ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts = { silent = true, noremap = true } },
     ["<leader>q"] = { ":q<CR>", "Quit Neovim", opts = { silent = true, noremap = true } },
+    ["<leader>s"] = {
+      ":source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>",
+      "Source Luasnip config",
+      opts = { noremap = true },
+    },
     ["<leader>e"] = { ":Telescope file_browser<CR>", "File Browser", opts = { silent = true, noremap = true } },
     ["<leader><leader>"] = { ":Telescope find_files<CR>", "Find Files", opts = { silent = true, noremap = true } },
     ["<leader>jf"] = { "<cmd>HopChar1<CR>", "1 Character Search", opts = { silent = true, noremap = true } },
