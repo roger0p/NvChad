@@ -34,10 +34,10 @@ return {
 
   -- Override plugin definition options
   ["goolord/alpha-nvim"] = {
+    after = "base46",
     disable = false,
-    cmd = "Alpha",
     config = function()
-      require "plugins.configs.alpha"
+      require "custom.plugins.alpha"
     end,
   },
 
