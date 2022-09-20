@@ -10,14 +10,13 @@ local sources = {
 
    -- webdev stuff
    -- b.formatting.deno_fmt,
-   b.formatting.prettier,
+   b.formatting.prettierd,
 
    -- Lua
    b.formatting.stylua,
 
    -- Shell
    b.formatting.shfmt,
-   b.formatting.shellharden,
    b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 }
 
