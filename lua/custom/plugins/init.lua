@@ -19,9 +19,9 @@ return {
   },
 
   ["nvim-lualine/lualine.nvim"] = {
-    config = function ()
+    config = function()
       -- require "custom.plugins.lualine"
-    end
+    end,
   },
 
   -- Override plugin definition options
@@ -30,6 +30,10 @@ return {
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
     end,
+  },
+
+  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
+    run = "yarn install --frozen-lockfile && yarn compile",
   },
 
   -- Override plugin definition options
