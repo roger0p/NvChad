@@ -33,43 +33,36 @@ M.custom = {
   },
 
   n = {
-    --General Mappings
+    --General Mappingscmd
+    ["x"] = { '"_x', "'x' doesnt copy", opts = {silent = true, noremap =true} },
+    ["<M-Up>"] = { "<CMD>m -2<CR>", "Move Line Up", opts = { noremap = true } },
+    ["<M-Down>"] = { "<CMD>m +1<CR>", "Move Line Down", opts = { noremap = true } },
     ["<leader>A"] = { "ggVG<CR>", "Select All", opts = { silent = true, noremap = true } },
-    ["<C-q>"] = {
-      function()
-        vim.diagnostic.setloclist()
-      end,
-      "diagnostic setloclist",
-    },
-    ["<C-n>"] = { ":NvimTreeToggle<CR>", opts = { silent = true, noremap = true } },
-    ["f"] = { "<cmd>HopChar1CurrentLineAC<cr>", opts = { silent = true, noremap = true } },
-    ["F"] = { "<cmd>HopChar1CurrentLineBC<cr>", opts = { silent = true, noremap = true } },
-    ["<leader>q"] = { ":q<CR>", "Quit Neovim", opts = { silent = true, noremap = true } },
-    ["<leader>e"] = { ":Telescope file_browser<CR>", "File Browser", opts = { silent = true, noremap = true } },
-    ["<leader><leader>"] = { ":Telescope find_files<CR>", "Find Files", opts = { silent = true, noremap = true } },
-    ["<leader>jf"] = { "<cmd>HopChar1<CR>", "1 Character Search", opts = { silent = true, noremap = true } },
-    ["<leader>tp"] = { "<cmd>TSPlaygroundToggle<CR>", "Toggle TSPlayground", opts = { silent = true, noremap = true } },
-    ["<leader>tb"] = { "<cmd>TroubleToggle<CR>", "Toggle Lsp-Troble", opts = { silent = true, noremap = true } },
-    ["<leader>jt"] = { "<cmd>HopChar2<CR>", "2 Character Search", opts = { silent = true, noremap = true } },
-    ["<leader>zf"] = { ":TZFocus<CR>", "Focus Mode", opts = { silent = true, noremap = true } },
-    ["<leader>m"] = { ":TZMinimalist<CR>", "Zen Mode", opts = { silent = true, noremap = true } },
-    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
+    ["<C-q>"] = { "<CMD>TroubleToggle<CR>", "Toggle Lsp-Troble", opts = { silent = true, noremap = true } },
+    ["<C-n>"] = { "<CMD>NvimTreeToggle<CR>", opts = { silent = true, noremap = true } },
+    ["<leader>q"] = { "<CMD>q<CR>", "Quit Neovim", opts = { silent = true, noremap = true } },
+    ["<leader>e"] = { "<CMD>Telescope file_browser<CR>", "File Browser", opts = { silent = true, noremap = true } },
+    ["<leader><leader>"] = { "<CMD>Telescope find_files<CR>", "Find Files", opts = { silent = true, noremap = true } },
+    ["<leader>zf"] = { "<CMD>TZFocus<CR>", "Focus Mode", opts = { silent = true, noremap = true } },
+    ["<leader>m"] = { "<CMD>TZMinimalist<CR>", "Zen Mode", opts = { silent = true, noremap = true } },
+    ["<leader>gf"] = { "<CMD>HopChar1<CR>", "1 Character Search", opts = { silent = true, noremap = true } },
+    ["<leader>gt"] = { "<CMD>HopChar2<CR>", "2 Character Search", opts = { silent = true, noremap = true } },
 
     --Toggleterm Mappings
-    ["<leader>gg"] = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Open Lazigit", opts = { noremap = true, silent = true } },
-    ["<leader>gn"] = { "<cmd>lua _NODE_TOGGLE()<CR>", "Open Node", opts = { noremap = true, silent = true } },
-    ["<leader>gd"] = {
-      "<cmd>lua _NCDU_TOGGLE()<CR>",
+    ["<leader>tg"] = { "<CMD>lua _LAZYGIT_TOGGLE()<CR>", "Open Lazigit", opts = { noremap = true, silent = true } },
+    ["<leader>tn"] = { "<CMD>lua _NODE_TOGGLE()<CR>", "Open Node", opts = { noremap = true, silent = true } },
+    ["<leader>td"] = {
+      "<CMD>lua _NCDU_TOGGLE()<CR>",
       "Open storage analyzer",
       opts = { noremap = true, silent = true },
     },
-    ["<leader>gb"] = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Open Task Manager", opts = { noremap = true, silent = true } },
-    ["<leader>gs"] = { "<cmd>lua _SPOTIFY_TOGGLE()<CR>", "Open Spotify", opts = { noremap = true, silent = true } },
-    ["<leader>gp"] = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "Open Python3", opts = { noremap = true, silent = true } },
+    ["<leader>tb"] = { "<CMD>lua _BTOP_TOGGLE()<CR>", "Open Task Manager", opts = { noremap = true, silent = true } },
+    ["<leader>ts"] = { "<CMD>lua _SPOTIFY_TOGGLE()<CR>", "Open Spotify", opts = { noremap = true, silent = true } },
+    ["<leader>tp"] = { "<CMD>lua _PYTHON_TOGGLE()<CR>", "Open Python3", opts = { noremap = true, silent = true } },
     -----------------------------------------------------------------
     -- SUPERCOOL MAPPING THAT SWAPS TRUE WITH FALSE AND VICE-VERSA --
     -----------------------------------------------------------------
-    ["<leader>rr"] = {
+    ["<leader>R"] = {
       function()
         local swapBoolean = function()
           local c = vim.api.nvim_get_current_line()

@@ -17,7 +17,7 @@ o.list = true
 o.listchars:append "eol:↲"
 o.listchars:append "tab:<->"
 -- o.listchars:append "tab:>-,trail:-,eol:<,nbsp:%"
-o.lcs:append "extends:>,precedes:<"
+o.listchars:append "extends:>,precedes:<"
 
 -----------------------
 -- WSL RELATED STUFF --
