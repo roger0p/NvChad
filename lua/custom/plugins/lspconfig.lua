@@ -11,7 +11,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,capabilities
   }
 end
-
--- lspconfig.emmet_ls.setup {
---   filetypes = { "html", "typescript", "javascript", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
--- }

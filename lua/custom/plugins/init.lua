@@ -3,9 +3,6 @@ local overrides = require "custom.plugins.overrides"
 return {
 
   --NvChad Ui Changes
-  ["NvChad/base46"] = {
-    -- disable = true,
-  },
   ["NvChad/ui"] = {
     override_options = {
       statusline = {
@@ -18,25 +15,7 @@ return {
     },
   },
 
-  ["nvim-lualine/lualine.nvim"] = {
-    config = function()
-      -- require "custom.plugins.lualine"
-    end,
-  },
-
-  -- Override plugin definition options
-  ["neovim/nvim-lspconfig"] = {
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
-    end,
-  },
-
-  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
-    run = "yarn install --frozen-lockfile && yarn compile",
-  },
-
-  -- Override plugin definition options
+  -- Override plugin options
   ["goolord/alpha-nvim"] = {
     after = "base46",
     disable = false,
@@ -45,11 +24,15 @@ return {
     end,
   },
 
+  ["folke/which-key.nvim"] = {
+    disable = false,
+  },
+
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
   --
-  -- overrde plugin configs
+  -- override plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter,
   },
@@ -63,46 +46,21 @@ return {
     override_options = overrides.nvimtree,
   },
 
-  -- Install a plugin
-  ["max397574/better-escape.nvim"] = {
-    event = "InsertEnter",
+  -- Add another configuration to plugins without changing NvChad's Default
+  --[[ In this case I just wanted to add telescope-file-browser to telescope 
+       config without changing the default so, updating NvChad doesn't reset telescope config ]]
+  ["neovim/nvim-lspconfig"] = {
     config = function()
-      require("better_escape").setup()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
     end,
   },
+
   -- Install plugin
-  ["Pocco81/TrueZen.nvim"] = {},
-  ["folke/which-key.nvim"] = {
-    disable = false,
+  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
+    run = "yarn install --frozen-lockfile && yarn compile",
   },
 
-  -- load it after nvim-lspconfig cuz we lazy loaded lspconfig
-  ["jose-elias-alvarez/null-ls.nvim"] = {
-    after = "nvim-lspconfig",
-    config = function()
-      require "custom.plugins.null-ls"
-    end,
-  },
-
-  ["akinsho/toggleterm.nvim"] = {
-    tag = "*",
-    config = function()
-      require "custom.plugins.toggleterm"
-    end,
-  },
-
-  ["nvim-telescope/telescope-file-browser.nvim"] = {},
-  ["sam4llis/nvim-tundra"] = {},
-  ["folke/tokyonight.nvim"] = {},
-  ["catppuccin/nvim"] = { module = "catppuccin" },
-  ["Everblush/everblush.nvim"] = {},
-  ["michaeldyrynda/carbon.vim"] = {},
-  ["tiagovla/tokyodark.nvim"] = {},
-  ["rebelot/kanagawa.nvim"] = {},
-  ["ellisonleao/gruvbox.nvim"] = {},
-  ["sainnhe/gruvbox-material"] = {},
-  ["sainnhe/everforest"] = {},
-  ["folke/trouble.nvim"] = { cmd = "TroubleToggle" },
   ["nvim-treesitter/playground"] = {
     config = function()
       require("nvim-treesitter.configs").setup {
@@ -127,14 +85,42 @@ return {
       }
     end,
   },
-  ["windwp/nvim-ts-autotag"] = {
+
+  ["max397574/better-escape.nvim"] = {
+    event = "InsertEnter",
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("better_escape").setup()
     end,
   },
-  ["p00f/nvim-ts-rainbow"] = {},
-  ["tpope/vim-repeat"] = {},
-  ["tpope/vim-surround"] = {},
+
+  ["glepnir/lspsaga.nvim"] = {
+    branch = "main",
+    config = function()
+      local saga = require "lspsaga"
+
+      saga.init_lsp_saga {
+        -- your configuration
+      }
+    end,
+  },
+
+  ["Pocco81/TrueZen.nvim"] = {},
+
+  -- load it after nvim-lspconfig cuz we lazy loaded lspconfig
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
+
+  ["akinsho/toggleterm.nvim"] = {
+    tag = "*",
+    config = function()
+      require "custom.plugins.toggleterm"
+    end,
+  },
+
   ["phaazon/hop.nvim"] = {
     branch = "v2", -- optional but strongly recommended
     config = function()
@@ -158,6 +144,11 @@ return {
       }
     end,
   },
+  ["windwp/nvim-ts-autotag"] = {
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
   ["nvim-neo-tree/neo-tree.nvim"] = {
     branch = "v2.x",
     module = "neo-tree",
@@ -170,4 +161,19 @@ return {
       require "custom.plugins.neo-tree"
     end,
   },
+  ["nvim-telescope/telescope-file-browser.nvim"] = {},
+  ["sam4llis/nvim-tundra"] = {},
+  ["folke/tokyonight.nvim"] = {},
+  ["catppuccin/nvim"] = { module = "catppuccin" },
+  ["Everblush/everblush.nvim"] = {},
+  ["michaeldyrynda/carbon.vim"] = {},
+  ["tiagovla/tokyodark.nvim"] = {},
+  ["rebelot/kanagawa.nvim"] = {},
+  ["ellisonleao/gruvbox.nvim"] = {},
+  ["sainnhe/gruvbox-material"] = {},
+  ["sainnhe/everforest"] = {},
+  ["folke/trouble.nvim"] = { cmd = "TroubleToggle" },
+  ["p00f/nvim-ts-rainbow"] = {},
+  ["tpope/vim-repeat"] = {},
+  ["tpope/vim-surround"] = {},
 }
