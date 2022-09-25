@@ -11,6 +11,29 @@ M.treesitter = {
   },
 }
 
+M.colorizer = {
+  user_default_options = {
+    RGB = true, -- #RGB hex codes
+    RRGGBB = true, -- #RRGGBB hex codes
+    names = true, -- "Name" codes like Blue
+    RRGGBBAA = true, -- #RRGGBBAA hex codes
+    rgb_fn = true, -- CSS rgb() and rgba() functions
+    hsl_fn = true, -- CSS hsl() and hsla() functions
+    css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+    css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+    tailwind = true, -- Enable tailwind colors
+    mode = "background", -- Set the display mode.
+  },
+}
+
+M.blankline = {
+  buftype_exclude = { "terminal" },
+  show_trailing_blankline_indent = true,
+  show_first_indent_level = false,
+  show_current_context = false,
+  show_current_context_start = false,
+}
+
 M.mason = {
   ensure_installed = {
     -- lua stuff

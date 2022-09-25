@@ -41,11 +41,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 local RunFile = vim.api.nvim_create_augroup("RunFile", { clear = true })
 vim.api.nvim_create_autocmd(
   "FileType",
-  { pattern = "javascript", command = "nnoremap <leader>B :!node %<CR>", group = RunFile }
+  { pattern = "javascript", command = "nnoremap <leader><RETURN> :!node %<CR>", group = RunFile }
 )
 vim.api.nvim_create_autocmd(
   "FileType",
-  { pattern = "python", command = "nnoremap <leader>B :!python3 %<CR>", group = RunFile }
+  { pattern = "python", command = "nnoremap <leader><RETURN> :!python3 %<CR>", group = RunFile }
 )
 -----------------------------------------------
 -- QUIT NVIM IF NVIM-TREE IS THE LAST BUFFER --

@@ -46,6 +46,13 @@ return {
     override_options = overrides.nvimtree,
   },
 
+  ["nvchad/nvim-colorizer.lua"] = {
+    override_options = overrides.colorizer,
+  },
+
+  ["lukas-reineke/indent-blankline.nvim"] = {
+    override_options = overrides.blankline,
+  },
   -- Add another configuration to plugins without changing NvChad's Default
   --[[ In this case I just wanted to add telescope-file-browser to telescope 
        config without changing the default so, updating NvChad doesn't reset telescope config ]]
