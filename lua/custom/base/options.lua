@@ -18,20 +18,21 @@ o.listchars:append "eol:↲"
 o.listchars:append "tab:<->"
 -- o.listchars:append "tab:>-,trail:-,eol:<,nbsp:%"
 o.listchars:append "extends:>,precedes:<"
+o.clipboard = ""
 
 -----------------------
 -- WSL RELATED STUFF --
 -----------------------
-if vim.fn.has "wsl" == 1 then
-  vim.cmd "set guifont='Iosevka'"
-  vim.g.clipboard = {
-    copy = {
-      ["+"] = "win32yank.exe -i --crlf",
-      ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o --lf",
-      ["*"] = "win32yank.exe -o --lf",
-    },
-  }
-end
+-- if vim.fn.has "wsl" == 1 then
+--   vim.cmd "set guifont='Iosevka'"
+--   vim.g.clipboard = {
+--     copy = {
+--       ["+"] = "win32yank.exe -i --crlf",
+--       ["*"] = "win32yank.exe -i --crlf",
+--     },
+--     paste = {
+--       ["+"] = "win32yank.exe -o --lf",
+--       ["*"] = "win32yank.exe -o --lf",
+--     },
+--   }
+-- end

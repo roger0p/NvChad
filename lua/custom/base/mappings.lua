@@ -35,6 +35,9 @@ M.custom = {
   n = {
     --General Mappingscmd
     ["x"] = { '"_x', "'x' doesnt copy", opts = { silent = true, noremap = true } },
+    ["<leader>y"] = { '"+y', "'x' doesnt copy", opts = { silent = true, noremap = true } },
+    ["<leader>d"] = { '"_d', "Delete without copy", opts = { silent = true, noremap = true } },
+    ["<leader>Y"] = { '"+Y', "'x' doesnt copy", opts = { silent = true, noremap = true } },
     ["<M-Up>"] = { "<CMD>m -2<CR>", "Move Line Up", opts = { noremap = true } },
     ["<M-Down>"] = { "<CMD>m +1<CR>", "Move Line Down", opts = { noremap = true } },
     ["<leader>A"] = { "ggVG<CR>", "Select All", opts = { silent = true, noremap = true } },
@@ -77,6 +80,29 @@ M.custom = {
       "Show Information",
       opts = { noremap = true, silent = true },
     },
+
+    --Harpoon Mappings
+    ["<leader>P"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+    },
+    ["za"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+    },
+    ["zn"] = {
+      function()
+        require("harpoon.ui").nav_next()
+      end,
+    },
+    ["zp"] = {
+      function()
+        require("harpoon.ui").nav_prev()
+      end,
+    },
+
     -----------------------------------------------------------------
     -- SUPERCOOL MAPPING THAT SWAPS TRUE WITH FALSE AND VICE-VERSA --
     -----------------------------------------------------------------
@@ -93,7 +119,10 @@ M.custom = {
     },
   },
 
-  v = {},
+  v = {
+    ["<leader>y"] = { '"+y', "Yank without registring to clipboard", opts = { silent = true, noremap = true } },
+    ["<leader>d"] = { '"_d', "Delete without copy", opts = { silent = true, noremap = true } },
+  },
   x = {},
 }
 

@@ -15,19 +15,9 @@ return {
     },
   },
 
-  -- Override plugin options
-  ["goolord/alpha-nvim"] = {
-    after = "base46",
-    disable = false,
-    config = function()
-      require "custom.plugins.alpha"
-    end,
-  },
-
-  ["folke/which-key.nvim"] = {
-    disable = false,
-  },
-
+  -- Add another configuration to plugins without changing NvChad's Default
+  --[[ In this case I just wanted to add telescope-file-browser to telescope 
+       config without changing the default so, updating NvChad doesn't reset telescope config ]]
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
@@ -46,16 +36,34 @@ return {
     override_options = overrides.nvimtree,
   },
 
-  ["nvchad/nvim-colorizer.lua"] = {
+  ["NvChad/nvim-colorizer.lua"] = {
     override_options = overrides.colorizer,
   },
 
   ["lukas-reineke/indent-blankline.nvim"] = {
     override_options = overrides.blankline,
   },
-  -- Add another configuration to plugins without changing NvChad's Default
-  --[[ In this case I just wanted to add telescope-file-browser to telescope 
-       config without changing the default so, updating NvChad doesn't reset telescope config ]]
+
+  ["goolord/alpha-nvim"] = {
+    after = "base46",
+    disable = false,
+    config = function()
+      require "custom.plugins.alpha"
+    end,
+  },
+
+  ["folke/which-key.nvim"] = {
+    disable = false,
+  },
+
+  -- Install plugin
+
+  ["lewis6991/impatient.nvim"] = {
+    config = function()
+      require("impatient").enable_profile()
+    end,
+  },
+
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
@@ -63,7 +71,6 @@ return {
     end,
   },
 
-  -- Install plugin
   ["dsznajder/vscode-es7-javascript-react-snippets"] = {
     run = "yarn install --frozen-lockfile && yarn compile",
   },
@@ -128,6 +135,16 @@ return {
     end,
   },
 
+  ["tiagovla/scope.nvim"] = {
+    config = function()
+      require("scope").setup()
+    end,
+  },
+
+  ["ThePrimeagen/harpoon"] = {},
+  ["tjdevries/colorbuddy.vim"] = {},
+  ["tjdevries/gruvbuddy.nvim"] = {},
+
   ["phaazon/hop.nvim"] = {
     branch = "v2", -- optional but strongly recommended
     config = function()
@@ -151,6 +168,7 @@ return {
       }
     end,
   },
+  ["nvim-telescope/telescope-fzy-native.nvim"] = {},
   ["windwp/nvim-ts-autotag"] = {
     config = function()
       require("nvim-ts-autotag").setup()
