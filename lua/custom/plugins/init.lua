@@ -143,6 +143,7 @@ return {
 
   ["ThePrimeagen/harpoon"] = {},
   ["tjdevries/colorbuddy.vim"] = {},
+  ["Yazeed1s/oh-lucy.nvim"] = {},
   ["tjdevries/gruvbuddy.nvim"] = {},
 
   ["phaazon/hop.nvim"] = {
@@ -188,6 +189,15 @@ return {
   },
   ["nvim-telescope/telescope-file-browser.nvim"] = {},
   ["sam4llis/nvim-tundra"] = {},
+  ["ahmedkhalf/project.nvim"] = {
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+  },
   ["folke/tokyonight.nvim"] = {},
   ["catppuccin/nvim"] = { module = "catppuccin" },
   ["Everblush/everblush.nvim"] = {},
